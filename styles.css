@@ -1,0 +1,412 @@
+/* || Roboto Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* || Poppins Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* || RESET */
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* || CSS Font Size Variables */
+:root {
+
+    /* | For Display Text  */
+    --DISPLAY--SIZE: 4rem;
+    /* 64px */
+    --DISPLAY--LINE--HEIGHT: 44px;
+
+    /* | For Heading Text  */
+    --HEADING--SIZE: 2.813rem;
+    /* 45px */
+    --HEADING--LINE--HEIGHT: 36px;
+
+    /* | For Title Text  */
+    --TITLE--SIZE: 1.25rem;
+    /* 20px */
+    --TITLE--LINE--HEIGHT: 24px;
+    --TITLE--LETTER--SPACING: 0.15px;
+
+    /* | For Label Text  */
+    --LABLE--SIZE: 1.125rem;
+    /* 18px */
+    --LABEL--LINE--HEIGHT: 16px;
+    --LABEL--LETTER--SPACING: 0.5px;
+
+    /* | For Body Text  */
+    --BODY--M--SIZE: 0.875rem;
+    /* 14px */
+    --BODY--M--LINE-HEIGHT: 20px;
+    --BODY--M--LETTER--SPACING: 0.25px;
+
+
+    /* || Colors */
+    --bg-color: beige;
+    --bg-btn-color: azure;
+    --border-color: bisque;
+
+}
+
+
+input,
+button {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+/* || Body  */
+body {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* || Header styles */
+body .header {
+    position: relative;
+    background-color: var(--bg-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .nav {
+    width: 75%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+    transition: width .3s ease-in-out;
+}
+
+@media (width < 768px) {
+    .header .nav {
+        width: 95%;
+    }
+}
+
+
+/* || Lift Container  */
+.nav .left--cont {
+    background-color: transparent;
+}
+
+.left--cont .figure {
+    width: 48px;
+    height: 48px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.figure img {
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* || Right Container  */
+.middel--cont {
+    min-width: 0;
+    flex: 1;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.middel--cont input {
+    min-width: 0%;
+    flex-basis: 400px;
+    flex-shrink: 1;
+    border: none;
+    outline: 5px solid transparent;
+    font-size: var(--LABLE--SIZE);
+    letter-spacing: var(--LABEL--LETTER--SPACING);
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: var(--bg-btn-color);
+    transition: outline 0.3s ease-in-out;
+}
+
+.middel--cont input:active,
+.middel--cont input:focus,
+.middel--cont input:hover {
+    outline: 5px solid var(--border-color);
+}
+
+
+/* || Right Container  */
+.right--cont {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right--cont button {
+    border: none;
+    outline: 5px solid transparent;
+    font-size: var(--LABLE--SIZE);
+    letter-spacing: var(--LABEL--LETTER--SPACING);
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: var(--bg-color);
+}
+
+/* .right--cont button:active,
+.right--cont button:focus,
+.right--cont button:hover {
+    outline: 5px solid var(--border-color);
+} */
+
+/* || Assignment Drop-Down */
+.drop--down--cont {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: height 0.3s ease-in;
+}
+
+.drop--down--cont .drop--down {
+    background-color: #a5a5a5;
+    width: inherit;
+    height: inherit;
+    max-height: 250px;
+    padding: 8px;
+    overflow-y: scroll;
+}
+
+.drop--down::-webkit-scrollbar {
+    display: none;
+}
+
+.drop--down .link--cont {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.link--cont a {
+    width: 100%;
+    padding: 8px;
+    text-decoration: none;
+    font-size: var(--BODY--M--SIZE);
+    letter-spacing: var(--BODY--M--LETTER--SPACING);
+    line-height: var(--BODY--M--LINE-HEIGHT);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.link--cont a:active,
+.link--cont a:focus,
+.link--cont a:hover {
+    background-color: var(--border-color);
+}
+
+
+/* || Main Container Style  */
+
+#root {
+    width: 75%;
+    transition: width .3s ease-in-out, media .3s ease-in-out;
+}
+
+@media (width < 768px) {
+    #root {
+        width: 95%;
+    }
+}
+
+
+#root #cards--wrapper {
+    width: 100%;
+    padding-block: 10px;
+    display: grid;
+    gap: 10px;
+}
+
+@media (width < 481px) {
+    #cards--wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (481px <=width < 768px) {
+    #cards--wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (768px <=width < 1024px) {
+    #cards--wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (1024px <=width < 1200px) {
+    #cards--wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (width >=1200px) {
+    #cards--wrapper {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.card--cont {
+    background-color: var(--bg-btn-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--border-color);
+}
+
+.card--cont .assign--no {
+    width: 100%;
+    padding: 16px 16px 4px 16px;
+    text-transform: capitalize;
+    font-size: var(--TITLE--SIZE);
+    letter-spacing: var(--TITLE--LETTER--SPACING);
+    line-height: var(--TITLE--LINE--HEIGHT);
+    background-color: var(--border-color);
+}
+
+.card--cont a {
+    width: 100%;
+    padding: 16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 10px;
+    color: black;
+}
+
+
+.card--cont a h3 {
+    text-transform: capitalize;
+    font-size: var(--TITLE--SIZE);
+    letter-spacing: var(--TITLE--LETTER--SPACING);
+    line-height: var(--TITLE--LINE--HEIGHT);
+}
+
+.card--cont a p {
+    font-size: var(--BODY--M--SIZE);
+    letter-spacing: var(--BODY--M--LETTER--SPACING);
+    line-height: var(--BODY--M--LINE-HEIGHT);
+}
+
+.view--link {
+    align-self: flex-end;
+    background-color: transparent;
+    padding: 2px 10px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card--cont a:active .view--link,
+.card--cont a:focus .view--link,
+.card--cont a:hover .view--link {
+    background-color: var(--border-color);
+}
+
+.view--link .arrow {
+    transition: padding 0.3s ease-in-out;
+}
+
+.card--cont a:active .view--link .arrow,
+.card--cont a:focus .view--link .arrow,
+.card--cont a:hover .view--link .arrow {
+    padding-left: 10px;
+}
+
+/* || Back btn style  */
+.back--btn {
+    margin-block: 16px;
+    width: 75%;
+    display: flex;
+    transition: width .3s ease-in-out, media .3s ease-in-out;
+}
+
+
+@media (width < 768px) {
+    .back--btn {
+        width: 95%;
+    }
+}
+
+.back--btn div {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.back--btn a {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    text-decoration: none;
+    width: 38px;
+    height: 38px;
+    overflow: hidden;
+}
+
+
+.back--btn img {
+    font-size: 2rem;
+    width: inherit;
+    height: inherit;
+    padding: 4px 8px;
+    transition: background-color .3s ease-in-out;
+}
+
+
+.back--btn a:active img,
+.back--btn a:focus img,
+.back--btn a:hover img {
+    background-color: var(--bg-color);
+}
+
+
+/* || Detail Page  */
+.questions {
+    padding-top: 16px;
+    display: flex;
+    column-gap: 10px;
+}
+
+.questions p {
+    font-size: var(--BODY--M--SIZE);
+    letter-spacing: var(--BODY--M--LETTER--SPACING);
+    line-height: var(--BODY--M--LINE-HEIGHT);
+
+}
