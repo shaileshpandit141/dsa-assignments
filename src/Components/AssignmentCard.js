@@ -10,11 +10,13 @@ export default function AssignmentCard(data) {
             <a href="">
                 <h3>${data.title}</h3>
                 <p>Questions: ${num2}</p>
+            </a>
+            <div class="link--cont">
                 <p class="view--link">
                     <span>View it</span>
                     <span class="arrow">&#10140;</span>
                 </p>
-            </a>
+            </div>
         </div>
         `
     )
